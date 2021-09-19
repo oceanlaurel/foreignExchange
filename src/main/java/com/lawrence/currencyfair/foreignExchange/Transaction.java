@@ -1,4 +1,4 @@
-package com.lawrence.currencyfair.foreignExchange.model;
+package com.lawrence.currencyfair.foreignExchange;
 
 import java.sql.Date;
 

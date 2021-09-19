@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.lawrence.currencyfair.foreignExchange.Transaction;
 import com.lawrence.currencyfair.foreignExchange.TransactionRepository;
-import com.lawrence.currencyfair.foreignExchange.model.Transaction;
 
 @RestController
 @RequestMapping("/transactions")
@@ -27,7 +28,8 @@ public class TransactionController {
 		this.transactionRepository = transactionRepository;
 	}
 
-	@GetMapping
+//	@GetMapping
+	@RequestMapping(value="getTList", method=RequestMethod.GET)
 	public List<Transaction> getTransactions() {
 		return transactionRepository.findAll();
 	}
