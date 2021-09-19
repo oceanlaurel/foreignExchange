@@ -5,6 +5,7 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -37,13 +38,13 @@ public class TransactionController {
 	}
 
 	@PostMapping
-	public ResponseEntity<Transaction> createTransaction(@RequestBody Transaction transaction) throws URISyntaxException {
+	public ResponseEntity createTransaction(@RequestBody Transaction transaction) throws URISyntaxException {
 		Transaction savedTransaction = transactionRepository.save(transaction);
 		return ResponseEntity.created(new URI("/transactions/" + savedTransaction.getId())).body(savedTransaction);
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Transaction> updateTransaction(@PathVariable Long id, @RequestBody Transaction transaction) {
+	public ResponseEntity updateTransaction(@PathVariable Long id, @RequestBody Transaction transaction) {
 		Transaction currentTransaction = transactionRepository.findById(id).orElseThrow(RuntimeException::new);
 		currentTransaction.setTrackingId(transaction.getTrackingId());
 		currentTransaction.setUserId(transaction.getUserId());
@@ -63,4 +64,11 @@ public class TransactionController {
 
 		return ResponseEntity.ok(currentTransaction);
 	}
+	
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteClient(@PathVariable Long id) {
+    	transactionRepository.deleteById(id);
+        return ResponseEntity.ok().build();
+    }
+	
 }
