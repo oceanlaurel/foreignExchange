@@ -1,6 +1,6 @@
 package com.lawrence.currencyfair.foreignExchange;
 
-import java.sql.Date;
+import java.sql.Timestamp;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -15,7 +15,7 @@ public class Transaction {
 	@GeneratedValue
 	private Long id;
 
-	private int trackingId;
+	private String trackingId;
 
 	private String userId = "";
 
@@ -26,7 +26,7 @@ public class Transaction {
 	private Double amountBuy;
 
 	private float rate;
-	private Date timePlaced;
+	private Timestamp timePlaced;
 
 	private String originalCountry;
 
@@ -58,11 +58,11 @@ public class Transaction {
 		return rate;
 	}
 
-	public Date getTimePlaced() {
+	public Timestamp getTimePlaced() {
 		return timePlaced;
 	}
 
-	public int getTrackingId() {
+	public String getTrackingId() {
 		return trackingId;
 	}
 
@@ -98,11 +98,11 @@ public class Transaction {
 		this.rate = rate;
 	}
 
-	public void setTimePlaced(Date timePlaced) {
+	public void setTimePlaced(Timestamp timePlaced) {
 		this.timePlaced = timePlaced;
 	}
 
-	public void setTrackingId(int trackingId) {
+	public void setTrackingId(String trackingId) {
 		this.trackingId = trackingId;
 	}
 

@@ -27,6 +27,7 @@ public class TransactionController {
 
 	@RequestMapping(value="test", method=RequestMethod.GET)
 	public String test() {
+		System.out.println("TransactionController.test - Begin");
 		return "Hello World";
 	}
 	
@@ -46,7 +47,9 @@ public class TransactionController {
 
 	@PostMapping
 	public ResponseEntity createTransaction(@RequestBody Transaction transaction) throws URISyntaxException {
+		System.out.println("TransactionController.createTransaction - Begin");
 		Transaction savedTransaction = transactionRepository.save(transaction);
+		System.out.println("TransactionController.createTransaction - Initialized savedTransaction");
 		return ResponseEntity.created(new URI("/transactions/" + savedTransaction.getId())).body(savedTransaction);
 	}
 
