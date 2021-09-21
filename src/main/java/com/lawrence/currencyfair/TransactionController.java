@@ -25,12 +25,12 @@ public class TransactionController {
 
 	private final TransactionRepository transactionRepository;
 
-	@RequestMapping(value="test", method=RequestMethod.GET)
+	@RequestMapping(value = "test", method = RequestMethod.GET)
 	public String test() {
 		System.out.println("TransactionController.test - Begin");
 		return "Hello World";
 	}
-	
+
 	public TransactionController(TransactionRepository transactionRepository) {
 		this.transactionRepository = transactionRepository;
 	}
@@ -58,27 +58,27 @@ public class TransactionController {
 		Transaction currentTransaction = transactionRepository.findById(id).orElseThrow(RuntimeException::new);
 		currentTransaction.setTrackingId(transaction.getTrackingId());
 		currentTransaction.setUserId(transaction.getUserId());
-		
+
 		currentTransaction.setCurrencyFrom(currentTransaction.getCurrencyFrom());
 		currentTransaction.setCurrencyTo(currentTransaction.getCurrencyTo());
-		
+
 		currentTransaction.setAmountSell(currentTransaction.getAmountSell());
 		currentTransaction.setAmountBuy(currentTransaction.getAmountBuy());
-		
+
 		currentTransaction.setRate(currentTransaction.getRate());
 		currentTransaction.setTimePlaced(currentTransaction.getTimePlaced());
-		
+
 		currentTransaction.setOriginalCountry(currentTransaction.getOriginalCountry());
 
 		currentTransaction = transactionRepository.save(transaction);
 
 		return ResponseEntity.ok(currentTransaction);
 	}
-	
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteClient(@PathVariable Long id) {
-    	transactionRepository.deleteById(id);
-        return ResponseEntity.ok().build();
-    }
-	
+
+	@DeleteMapping("/{id}")
+	public ResponseEntity deleteClient(@PathVariable Long id) {
+		transactionRepository.deleteById(id);
+		return ResponseEntity.ok().build();
+	}
+
 }
