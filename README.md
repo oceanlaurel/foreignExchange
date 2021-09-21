@@ -61,7 +61,29 @@ Then the transaction was removed:
 ## Sample with several transactions prepared and shown on the transaction list:
 ![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-09.png?raw=true)
 
+# About using H2 in-memory database (Embedded in this Spring Boot application):
 
+## Reasons for using in-memory database:
+1) In-memory database is good for testing purposes, without the need of clean up any testing records after testing; because when application shutdown, it would be disappeared.
+(In testing this application, H2 in memory database would be used.) 
+
+2) In-memory database can use for front-end caching purposes for reducing the latency of interact with users. The performance is much better to direct connect to other database(s) on file systems, because it exists on memory directly. 
+For accessing the database(s) on file systems of the other server(s) for DML purposes, let the other Thread(s) to reference the data from in-memory database to do it, no need to affect the performance of the user experience.    
+And we can cache always accessing static data with in-memory database also for reducing latency.
+(But I have not enough time to implement this part)
+
+## H2-Console for administration purpose (if needed):
+
+### Copy the JDBC URL of the H2 in-memory database instance:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/h2-01.png?raw=true)
+
+### Lanuch H2 Console and paste the JDBC URL into the JDBC URL field and click the "Connect" button:
+URL: [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/h2-02.png?raw=true)
+Remarks: Let the other input as default values.
+
+### H2 in-memory database console for current database instance launched:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/h2-03.png?raw=true)
 
 ### Create Testing Data in H2-Console
 insert into TRANSACTION (ID, AMOUNT_BUY, AMOUNT_SELL, CURRENCY_FROM, CURRENCY_TO, ORIGINAL_COUNTRY,
