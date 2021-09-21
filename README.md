@@ -1,6 +1,66 @@
-#
+#Step to Test Manually:
 
+## Launch Server Side (Spring Boot):
+
+### Go to the project root folder of Foreign Exchange application:
 ![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/backend-01.png?raw=true)
+
+### Steps To Launch Server:
+
+#### Input: mvn clean
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/backend-02.png?raw=true)
+
+#### Input: mvn compile
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/backend-03.png?raw=true)
+
+#### Input: mvn spring-boot:run
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/backend-04.png?raw=true)
+
+### Server launched:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/backend-05.png?raw=true)
+
+### Copy the H2 in-memory database instance JDBC URL for connecting with H2-Console for administration purpose if necessary:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/backend-06.png?raw=true)
+
+## Launch Client Side (React):
+
+### Go to the front-end root folder of Foreign Exchange application front-end:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-01.png?raw=true)
+
+### Steps To Launch Client:
+
+#### Input: npm start
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-01.png?raw=true)
+
+Than application would be launched on [http://localhost:3000](http://localhost:3000)
+
+## To Test Manually:
+
+### Click the "Transactions" link to redirect to the transaction list:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-02.png?raw=true)
+
+### Click the "Add Transaction" button to add a new transaction:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-03.png?raw=true)
+
+### Input all information and the click the "Save" button to add the new transaction record:
+Remarks: The format of the Time Placed input is: YYYY-MM-DD"T"HH:mm:SS.ssss, such as: 2018-01-24T10:27:44.0000
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-04.png?raw=true)
+
+### Click the "Edit" button of the corresponding record to edit the transaction:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-05.png?raw=true)
+
+### Edit the information and the click the "Save" button to update the record:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-06.png?raw=true)
+
+### Click the "Delete" button of the corresponding record to delete the transaction:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-07.png?raw=true)
+
+Then the transaction was removed:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-08.png?raw=true)
+
+## Sample with several transactions prepared and shown on the transaction list:
+![alt text](https://github.com/oceanlaurel/foreignExchange/blob/master/src/main/resources/img/readme.md/frontend-09.png?raw=true)
+
 
 
 ### Create Testing Data in H2-Console
