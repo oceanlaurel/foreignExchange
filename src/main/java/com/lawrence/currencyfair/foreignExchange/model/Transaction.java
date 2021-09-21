@@ -1,4 +1,4 @@
-package com.lawrence.currencyfair.foreignExchange;
+package com.lawrence.currencyfair.foreignExchange.model;
 
 import java.sql.Timestamp;
 
