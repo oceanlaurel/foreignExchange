@@ -54,6 +54,7 @@ class TransactionEdit extends Component {
 		const { item } = this.state;
 		const title = <h2>{item.id ? 'Edit Transaction' : 'Add Transaction'}</h2>;
 
+
 		return <div>
 			<AppNavbar />
 			<Container>
@@ -65,42 +66,42 @@ class TransactionEdit extends Component {
 							onChange={this.handleChange} autoComplete="trackingId" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">User Id</Label>
+						<Label for="userId">User Id</Label>
 						<Input type="text" name="userId" id="userId" value={item.userId || ''}
 							onChange={this.handleChange} autoComplete="userId" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">Currency From</Label>
+						<Label for="currencyFrom">Currency From</Label>
 						<Input type="text" name="currencyFrom" id="currencyFrom" value={item.currencyFrom || ''}
 							onChange={this.handleChange} autoComplete="currencyFrom" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">Currency To</Label>
+						<Label for="currencyTo">Currency To</Label>
 						<Input type="text" name="currencyTo" id="currencyTo" value={item.currencyTo || ''}
 							onChange={this.handleChange} autoComplete="currencyTo" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">Amount Sell</Label>
+						<Label for="amountSell">Amount Sell</Label>
 						<Input type="text" name="amountSell" id="amountSell" value={item.amountSell || ''}
 							onChange={this.handleChange} autoComplete="amountSell" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">Amount Buy</Label>
+						<Label for="amountBuy">Amount Buy</Label>
 						<Input type="text" name="amountBuy" id="amountBuy" value={item.amountBuy || ''}
 							onChange={this.handleChange} autoComplete="amountBuy" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">Rate</Label>
+						<Label for="rate">Rate</Label>
 						<Input type="text" name="rate" id="rate" value={item.rate || ''}
 							onChange={this.handleChange} autoComplete="rate" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">Time Placed</Label>
+						<Label for="timePlaced">Time Placed</Label>
 						<Input type="text" name="timePlaced" id="timePlaced" value={item.timePlaced || ''}
 							onChange={this.handleChange} autoComplete="timePlaced" />
 					</FormGroup>
 					<FormGroup>
-						<Label for="email">Original Country</Label>
+						<Label for="originalCountry">Original Country</Label>
 						<Input type="text" name="originalCountry" id="originalCountry" value={item.originalCountry || ''}
 							onChange={this.handleChange} autoComplete="originalCountry" />
 					</FormGroup>
